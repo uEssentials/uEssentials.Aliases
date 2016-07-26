@@ -36,7 +36,7 @@ namespace Essentials.Modules.Aliases
 {
     [ModuleInfo(
         Name = "uEssentials.Aliases",
-        Author = "Leonardosc",
+        Author = "Leonardosnt",
         Version = "$ASM_VERSION"
     )]
     public class AliasesModule : EssModule {
