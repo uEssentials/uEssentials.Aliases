@@ -32,8 +32,8 @@ using Essentials.Common.Util;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace Essentials.Modules.Aliases
-{
+namespace Essentials.Modules.Aliases {
+
     [ModuleInfo(
         Name = "uEssentials.Aliases",
         Author = "Leonardosnt",
@@ -51,8 +51,8 @@ namespace Essentials.Modules.Aliases
 
             if (!File.Exists(_aliasesPath)) {
                 CommandAlias[] defaultAliases = {
-                    new CommandAlias("aliastest", "Just a test", null, new [] {"broadcast hi"}, null),
-                    new CommandAlias("aliastest2", "Just a test", null, new [] {"broadcast hi2"}, null),
+                    new CommandAlias("aliastest", "Just a test", null, new[] { "broadcast hi" }, null),
+                    new CommandAlias("aliastest2", "Just a test", null, new[] { "broadcast hi2" }, null),
                 };
 
                 JsonUtil.Serialize(_aliasesPath, defaultAliases);
@@ -94,7 +94,7 @@ namespace Essentials.Modules.Aliases
                 RegisteredAliases.AddRange(aliasBak); // Restore aliases
                 return CommandResult.Error("Error found: {0}", cw.Message);
             }
-            
+
             return CommandResult.Success();
         }
 
@@ -122,11 +122,13 @@ namespace Essentials.Modules.Aliases
             var commandManager = UEssentials.CommandManager;
 
             RegisteredAliases.ForEach(entry => {
-                commandManager.Register(entry); 
+                commandManager.Register(entry);
                 #if DEBUG
-                    Logger.LogInfo($"Registered alias: {entry.Name}");
+                Logger.LogInfo($"Registered alias: {entry.Name}");
                 #endif
             });
         }
+
     }
+
 }

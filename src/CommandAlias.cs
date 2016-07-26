@@ -46,7 +46,7 @@ namespace Essentials.Modules.Aliases {
         [JsonIgnore]
         public AllowedSource AllowedSource { get; set; }
 
-        public CommandAlias(string name, string description, string usage, string[] commands, 
+        public CommandAlias(string name, string description, string usage, string[] commands,
                             string[][] validInputs) {
             Name = name;
             Description = description;
@@ -71,7 +71,7 @@ namespace Essentials.Modules.Aliases {
                 StringBuilder allArgBuilder = null;
 
                 if (command.ToString().Contains("$arg*")) {
-                    allArgBuilder = new StringBuilder();    
+                    allArgBuilder = new StringBuilder();
                 }
 
                 for (var i = 0; i < args.Length; i++) {
@@ -110,6 +110,7 @@ namespace Essentials.Modules.Aliases {
         public override string ToString() {
             return $"Name: {Name}, Description: {Description}, ValidInputs: {ValidInputs}, Usage: {Usage}, Commands: {Commands}";
         }
+
     }
 
 }
