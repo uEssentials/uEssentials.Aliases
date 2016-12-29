@@ -3,3 +3,4 @@ bin/
 obj/
 .vs/ 
 cp.bat
+.idea/ 
